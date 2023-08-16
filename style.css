@@ -1,0 +1,99 @@
+body{
+    margin: 0;
+    padding: 0;
+    background:linear-gradient(blue,red,gold);
+}
+h1{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: 'muli',sans-serif;
+    height: 0px;
+    font-size: 80px;
+}
+#container{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+#slide-container{
+    height: 300px;
+    width: 85vw;
+    position: relative;
+    overflow: hidden;
+    max-width: 1400px;
+    padding: 20px;
+}
+#slide-container .Slidebtn{
+    position: absolute;
+    top: calc(50% - 30px);
+    height: 15px;
+    width: 15px;
+    border-left: 8px solid rgb(255, 255, 255);
+    border-top: 8px solid white;
+    cursor: pointer;
+}
+#slide-container .Slidebtn:hover{
+    transform: scale(1.2);
+}
+#slide-container .Slidebtn.inactive{
+    border-color: rgb(34, 33, 33);
+}
+#slide-container .Slidebtn:first-of-type{
+    transform: rotate(-45deg);
+    left: 10px;
+}
+#slide-container .Slidebtn:last-of-type{
+    transform: rotate(135deg);
+    right: 10px;
+}
+#slide-container #sliders{
+    display: flex;
+    width: 1000%;
+    height: 100%;
+    transition: all .5s;
+}
+#slide-container #sliders .imgslide{
+    height: 100%;
+    margin: auto 10px;
+    display: grid;
+    place-items: center;
+    transition: 0.3s;
+}
+#slide-container #sliders .imgslide:hover{
+    transform: scale(0.9);
+    cursor: pointer;
+}
+#slide-container #sliders .imgslide span{
+    color: white;
+    font-size: 60px;
+}
+#slide-container #sliders .imgslide span img{
+    height: 300px;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px 2px rgb(223, 222, 222), -2px -2px 2px 2px rgb(199, 196, 196);
+
+}
+@media only screen and (min-width:1100px) {
+    #slide-container #sliders .imgslide{
+        width: calc(2.5% - 20px);
+    }
+}
+@media only screen and (max-width:1100px) {
+    #slide-container #sliders .imgslide{
+        width: calc(3.3333333% - 20px);
+    }
+}
+@media only screen and (max-width:900px) {
+    #slide-container #sliders .imgslide{
+        width: calc(5% - 20px);
+    }
+}
+@media only screen and (max-width:550px) {
+    #slide-container #sliders .imgslide{
+        width: calc(10% - 20px);
+    }
+}
